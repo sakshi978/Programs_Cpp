@@ -1,0 +1,55 @@
+/*
+Question:
+  Jo is an aptitude trainer. She takes classes for college students for placements. She teaches students to find out highest common factor of three numbers. She has given homework for them to find out the same. Kindly help her to check whether their answers are correct or not.
+
+
+Case 1:
+Input (stdin)
+15
+30
+90
+15
+
+Output:
+Answer is correct.
+*/
+
+#include<iostream>
+
+int main()
+{
+  int n1,n2,n3,n4;
+  std::cin>>n1>>n2>>n3>>n4;
+  int small=0,gcd=0;
+  
+  if((n1<=n2) && (n1<=n3))
+  {
+    small=n1;
+  }
+  else if((n2<=n1) && (n2<=n3))
+  {
+    small=n2;
+  }
+  else
+  {
+    small=n3;
+  }
+  
+  while(small!=0)
+  {
+    if((n1%small==0) && (n2%small==0) && (n3%small==0))
+    {
+      gcd=small;
+      break;
+    }
+    small--;
+  }
+  if(gcd==n4)
+  {
+    std::cout<<"Answer is correct.";
+  }
+  else
+  {
+    std::cout<<"Answer is wrong.";
+  }
+}
